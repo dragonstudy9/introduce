@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="box time">
+            <div class="timer"></div>
+        </div>
+        <div class="box head">
+            <div id="titleText"></div>
+        </div>
+        <div class="box side">
+            <div>
+                <img src="../media/JoWonjeong.png" alt="조원정 이미지">
+                <div class="name">조원정</div>
+            </div>
+            <a href="introduce.html"><button>자기소개</button></a>
+            <a href="Certificate.html"><button>자격사항</button></a>
+            <a href="Education.html"><button>학력사항</button></a>
+        </div>
+        <div class="box main">
+            <p># 자격사항</p>
+            <div class="textarea">
+                <ul>
+                    <li>정보처리산업기사</li>
+                    <li>엑셀</li>
+                    <li>파워포인트</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box foot">
+            <div class="info">주소: 인천 부평</div>
+            <div class="info">생년: 2000</div>
+            <div class="info">이메일: dragonstudy9@naver.com</div>
+        </div>
+    </div>
+    <a href="#"><span class="material-symbols-outlined" id="Arrow_Shape_Up">Arrow_Shape_Up</span></a>
+</body>
+
+</html>
+<script>
+    let title = "삶이 있는 한 희망은 있다 -키케로";
+    let text = document.querySelector("#titleText");
+
+    let i = 0;
+    let id = setInterval(() => {
+        let word = title.charAt(i++);
+        text.innerHTML += word;
+        if (i > title.length) {
+            text.innerHTML = "";
+            i = 0;
+        }
+    }, 300);
+
+    setInterval(() => {
+        let datetime = new Date();
+        let obj = document.querySelector(".timer");
+        let time = datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds();
+        obj.innerHTML = time;
+    }, 1000);
+</script>
