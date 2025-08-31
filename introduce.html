@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    자기소개 페이지
+    <div id="container">
+        <div class="box time">
+            <div class="timer"></div>
+        </div>
+        <div class="box head">
+            <div id="titleText"></div>
+        </div>
+        <div class="box side">
+            <div>
+                <img src="media/JoWonjeong.png" alt="조원정 이미지">
+                <div class="name">조원정</div>
+            </div>
+            <a href="introduce.html"><button>자기소개</button></a>
+            <a href="Certificate.html"><button>자격사항</button></a>
+            <a href="Education.html"><button>학력사항</button></a>
+        </div>
+        <div class="box main">
+            <p># 자기소개</p>
+            <div class="textarea">
+                <p>안녕하세요! 조원정입니다.</p>
+                <p>더조은컴퓨터아카데미에서 풀스택 수업을 듣고 있습니다.</p>
+                <p>개발자 경력을 쌓고 싶습니다!</p>
+            </div>
+        </div>
+        <div class="box foot">
+            <div class="info">주소: 인천 부평</div>
+            <div class="info">생년: 2000</div>
+            <div class="info">이메일: dragonstudy9@naver.com</div>
+        </div>
+    </div>
+    <a href="#"><span class="material-symbols-outlined" id="Arrow_Shape_Up">Arrow_Shape_Up</span></a>
 </body>
 </html>
+<script>
+    let title = "삶이 있는 한 희망은 있다 -키케로";
+    let text = document.querySelector("#titleText");
+
+    let i = 0;
+    let id = setInterval(() => {
+        let word = title.charAt(i++);
+        text.innerHTML += word;
+        if (i > title.length) {
+            text.innerHTML = "";
+            i = 0;
+        }
+    }, 300);
+
+    setInterval(()=>{
+        let datetimer = new Date();
+        let obj = document.querySelector(".timer");
+        let timer = datetimer.getHours() + ":" + datetimer.getMinutes() + ":" + datetimer.getSeconds();
+        obj.innerHTML = timer;
+    }, 1000);
+</script>
